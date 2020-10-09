@@ -12,8 +12,7 @@ public class teht1{
     public static void main (String[] args) {
 
         //* luodaan autot, jotta oikea auto löytää oikeaan paikkaan
-        Random random = new Random();
-        Matka matka = new Matka(10);
+        Matka matka = new Matka(new Random().nextInt());
         auto omaAuto = new auto(aja(matka), true);
         auto aineAuto = new auto(true, onkoVapaa());
         auto vuokraAuto = new auto(true, true);
