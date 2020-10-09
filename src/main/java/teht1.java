@@ -1,5 +1,6 @@
 import java.util.*;
-public class teht1{
+
+public class teht1 {
 
     //* Tehtävä: suunnittele ja toteuta tehtävän asetelma niin, että voidaan korkealla tasolla rakentaa
     // opiskelijalle toimintalogiikka, joka priorisoi seuraavaa matkaa varten käytettävissä olevat autot
@@ -9,7 +10,7 @@ public class teht1{
     // ohjelmassa säietekniikoin.
 
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         //* luodaan autot, jotta oikea auto löytää oikeaan paikkaan
         Matka matka = new Matka(new Random().nextInt());
@@ -27,6 +28,7 @@ public class teht1{
 
 
     static boolean ehjä;
+
     public static boolean aja(Matka matka) {
         ehjä &= new Random().nextBoolean();
         return ehjä;
@@ -42,11 +44,11 @@ public class teht1{
         return vapaa;
     }
 
-    public static void ajaMuuAuto(auto auto){
+    public static void ajaMuuAuto(auto auto) {
         System.out.println("Matka suoritettu.");
     }
 
-    public static void palautaAuto(auto auto){
+    public static void palautaAuto(auto auto) {
         System.out.println("Ajossa käytetty auto palautettiin oikeaan osoitteeseen.");
     }
 
@@ -57,22 +59,20 @@ public class teht1{
     auto aineAuto = new auto(true, onkoVapaa());
     auto vuokraAuto = new auto(true, true);
 
-    public void Ajo(){
-            if (omaAuto.annaEhjä()) {
-                aja(matka);
-                korjaa(omaAuto);
-                System.out.println("Oma auto oli ehjä, matka tehtiin sillä.");
-            }
-            else if (!aineAuto.annaVarattu()) {
-                ajaMuuAuto(aineAuto);
-                palautaAuto(aineAuto);
-                korjaa(omaAuto);
-                System.out.println("Oma auto oli rikki, matka tehtiin ainejärjestön autolla.");
-            }
-            else {
-                ajaMuuAuto(vuokraAuto);
-                System.out.println("Oma auto oli rikki ja ainejärjestön auto varattu, matka tehtiin vuokra-autolla.");
-            }
-            System.out.println("Oma auto korjataan.");
+    public void Ajo() {
+        if (omaAuto.annaEhjä()) {
+            aja(matka);
+            korjaa(omaAuto);
+            System.out.println("Oma auto oli ehjä, matka tehtiin sillä.");
+        } else if (!aineAuto.annaVarattu()) {
+            ajaMuuAuto(aineAuto);
+            palautaAuto(aineAuto);
+            korjaa(omaAuto);
+            System.out.println("Oma auto oli rikki, matka tehtiin ainejärjestön autolla.");
+        } else {
+            ajaMuuAuto(vuokraAuto);
+            System.out.println("Oma auto oli rikki ja ainejärjestön auto varattu, matka tehtiin vuokra-autolla.");
         }
-        }
+        System.out.println("Oma auto korjataan.");
+    }
+}
