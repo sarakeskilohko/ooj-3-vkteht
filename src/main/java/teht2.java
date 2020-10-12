@@ -18,8 +18,7 @@ public class teht2 {
             System.out.println("Tämä oli kylttisi:");
             tulosta(kyltti1);
             System.exit(0);
-        }
-        else {
+        } else {
             luokyltti(kyltti2);
             tulosta(kyltti2);
             kylttimuutos(kyltti2);
@@ -33,8 +32,7 @@ public class teht2 {
             tulosta(kyltti1);
             tulosta(kyltti2);
             System.exit(0);
-        }
-        else {
+        } else {
             luokyltti(kyltti3);
             tulosta(kyltti3);
             kylttimuutos(kyltti3);
@@ -93,7 +91,7 @@ public class teht2 {
 
     }
 
-    public static Kyltti luokyltti (Kyltti kyltti) {
+    public static Kyltti luokyltti(Kyltti kyltti) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Anna leveys välillä 8-40");
@@ -115,7 +113,7 @@ public class teht2 {
     }
 
 
-    public static void kylttimuutos (Kyltti kyltti) {
+    public static void kylttimuutos(Kyltti kyltti) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Haluatko muuttaa täytettä? Kirjoita *, # , - , tai 'ei' jos haluat lopettaa.");
 
@@ -158,7 +156,7 @@ public class teht2 {
         }
     }
 
-    public static void tulosta (Kyltti kyltti){
+    public static void tulosta(Kyltti kyltti) {
         final int k2 = (kyltti.annaKorkeus() - 1) / 2;
         final int l2 = (kyltti.annaLeveys() - kyltti.annaTeksti().length() - 2) / 2;
         String r = "";
@@ -171,7 +169,8 @@ public class teht2 {
         //tulostetaan haluttu teksti
         System.out.print(" " + kyltti.annaTeksti() + " ");
         //tulostetaan tekstin oikean puoleinen täyte
-        for (int i = 0; i < kyltti.annaLeveys() - l2 - kyltti.annaTeksti().length() - 2; i++) System.out.print(kyltti.annaTäyte());
+        for (int i = 0; i < kyltti.annaLeveys() - l2 - kyltti.annaTeksti().length() - 2; i++)
+            System.out.print(kyltti.annaTäyte());
         System.out.println();
         //tulostetaan alarivi(t)
         for (int i = 0; i < kyltti.annaKorkeus() - k2 - 1; i++) System.out.println(r);

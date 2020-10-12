@@ -28,19 +28,19 @@ public class Kyltti extends teht2 {
         return täyte;
     }
 
-    public void asetaLeveys(int leveys){
+    public void asetaLeveys(int leveys) {
         this.leveys = leveys;
     }
 
-    public void asetaKorkeus(int korkeus){
+    public void asetaKorkeus(int korkeus) {
         this.korkeus = korkeus;
     }
 
-    public void asetaTeksti(String teksti){
+    public void asetaTeksti(String teksti) {
         this.teksti = teksti;
     }
 
-    public void asetaTäyte(String täyte){
+    public void asetaTäyte(String täyte) {
         this.täyte = täyte;
     }
 }
