@@ -71,7 +71,7 @@ public class teht2 {
 
     public static void kylttimuutos (Kyltti kyltti) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Haluatko muuttaa täytettä? (*, # tai -) Kirjoita 'ei' jos haluat lopettaa.");
+        System.out.println("Haluatko muuttaa täytettä? Kirjoita *, # , - , tai 'ei' jos haluat lopettaa.");
 
         String uusitäyte = scanner.nextLine();
         if (uusitäyte.equals("ei")) {
