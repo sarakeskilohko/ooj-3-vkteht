@@ -5,6 +5,8 @@ public class teht2 {
     public static void main(String[] args) {
 
         Kyltti kyltti1 = new Kyltti(0, 0, "", "");
+        Kyltti kyltti2 = new Kyltti(0, 0, "", "");
+        Kyltti kyltti3 = new Kyltti(0, 0, "", "");
         luokyltti(kyltti1);
         tulosta(kyltti1);
         kylttimuutos(kyltti1);
@@ -13,10 +15,11 @@ public class teht2 {
         Scanner scanner = new Scanner(System.in);
         String vastaus1 = scanner.nextLine();
         if (vastaus1.equals("ei")) {
+            System.out.println("Tämä oli kylttisi:");
+            tulosta(kyltti1);
             System.exit(0);
         }
         else {
-            Kyltti kyltti2 = new Kyltti(0, 0, "", "");
             luokyltti(kyltti2);
             tulosta(kyltti2);
             kylttimuutos(kyltti2);
@@ -26,10 +29,12 @@ public class teht2 {
         Scanner scanneri = new Scanner(System.in);
         String vastaus2 = scanneri.nextLine();
         if (vastaus2.equals("ei")) {
+            System.out.println("Kylttisi olivat nämä:");
+            tulosta(kyltti1);
+            tulosta(kyltti2);
             System.exit(0);
         }
         else {
-            Kyltti kyltti3 = new Kyltti(0, 0, "", "");
             luokyltti(kyltti3);
             tulosta(kyltti3);
             kylttimuutos(kyltti3);
