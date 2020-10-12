@@ -4,8 +4,8 @@ public class teht2 {
 
     public static void main(String[] args) {
 
-        Kyltti kyltti1;
-        kyltti1 = luokyltti(kyltti1);
+        Kyltti kyltti1 = new Kyltti(0, 0, "", "");
+        luokyltti(kyltti1);
         tulosta(kyltti1);
         kylttimuutos(kyltti1);
 
@@ -16,8 +16,8 @@ public class teht2 {
             System.exit(0);
         }
         else {
-            Kyltti kyltti2;
-            kyltti2 = luokyltti(kyltti2);
+            Kyltti kyltti2 = new Kyltti(0, 0, "", "");
+            luokyltti(kyltti2);
             tulosta(kyltti2);
             kylttimuutos(kyltti2);
         }
@@ -29,8 +29,8 @@ public class teht2 {
             System.exit(0);
         }
         else {
-            Kyltti kyltti3;
-            kyltti3 = luokyltti(kyltti3);
+            Kyltti kyltti3 = new Kyltti(0, 0, "", "");
+            luokyltti(kyltti3);
             tulosta(kyltti3);
             kylttimuutos(kyltti3);
         }
@@ -39,9 +39,10 @@ public class teht2 {
         Scanner skanner = new Scanner(System.in);
         String vastaus3 = skanner.nextLine();
 
+
     }
 
-    public static void luokyltti (Kyltti kyltti) {
+    public static Kyltti luokyltti (Kyltti kyltti) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Anna leveys välillä 8-40");
@@ -53,6 +54,13 @@ public class teht2 {
         String teksti = scanner.nextLine();
         System.out.println("Valitse täyte (*, # tai -)");
         String täyte = scanner.nextLine();
+
+        kyltti.asetaTäyte(täyte);
+        kyltti.asetaKorkeus(korkeus);
+        kyltti.asetaLeveys(leveys);
+        kyltti.asetaTeksti(teksti);
+
+        return kyltti;
     }
 
 
@@ -64,7 +72,8 @@ public class teht2 {
         if (uusitäyte.equals("ei")) {
             System.exit(0);
         } else {
-            tulosta(kyltti.annaLeveys(), kyltti.annaKorkeus(), kyltti.annaTeksti(), uusitäyte);
+            kyltti.asetaTäyte(uusitäyte);
+            tulosta(kyltti);
         }
 
         System.out.println("Haluatko muuttaa leveyttä? Kirjoita uusi leveys välillä 8-40, tai '0' jos haluat lopettaa");
@@ -73,7 +82,8 @@ public class teht2 {
         if (uusileveys == 0) {
             System.exit(0);
         } else {
-            tulosta(uusileveys, kyltti.annaKorkeus(), kyltti.annaTeksti(), uusitäyte);
+            kyltti.asetaLeveys(uusileveys);
+            tulosta(kyltti);
         }
 
         System.out.println("Haluatko muuttaa korkeutta? Kirjoita uusi korkeus välillä 3-6, tai '0' jos haluat lopettaa");
@@ -82,16 +92,18 @@ public class teht2 {
         if (uusikorkeus == 0) {
             System.exit(0);
         } else {
-            tulosta(uusileveys, uusikorkeus, kyltti.annaTeksti(), uusitäyte);
+            kyltti.asetaKorkeus(uusikorkeus);
+            tulosta(kyltti);
         }
 
         System.out.println("Haluatko muuttaa vielä kerran täytettä? Kirjoita uusi täyte (*, # tai -) tai 'ei' jos lopetat");
-
+        scanner.nextLine();
         String uusiuusitäyte = scanner.nextLine();
         if (uusiuusitäyte.equals("ei")) {
             System.exit(0);
         } else {
-            tulosta(uusileveys, uusikorkeus, kyltti.annaTeksti(), uusiuusitäyte);
+            kyltti.asetaTäyte(uusiuusitäyte);
+            tulosta(kyltti);
         }
     }
 
