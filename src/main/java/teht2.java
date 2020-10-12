@@ -41,9 +41,55 @@ public class teht2 {
         }
 
         System.out.println("Haluatko vielä muokata jotain kylttiä? Kirjoita kyltin numero (1,2,3) tai 'ei'");
+        tulosta(kyltti1);
+        System.out.println();
+        tulosta(kyltti2);
+        System.out.println();
+        tulosta(kyltti3);
         Scanner skanner = new Scanner(System.in);
         String vastaus3 = skanner.nextLine();
 
+        switch (vastaus3) {
+            case "1":
+                kylttimuutos(kyltti1);
+                System.out.println("Kylttisi olivat:");
+                tulosta(kyltti1);
+                System.out.println();
+                tulosta(kyltti2);
+                System.out.println();
+                tulosta(kyltti3);
+                System.exit(0);
+
+            case "2":
+                kylttimuutos(kyltti2);
+                System.out.println("Kylttisi olivat:");
+                tulosta(kyltti1);
+                System.out.println();
+                tulosta(kyltti2);
+                System.out.println();
+                tulosta(kyltti3);
+                System.exit(0);
+
+            case "3":
+                kylttimuutos(kyltti3);
+                System.out.println("Kylttisi olivat:");
+                tulosta(kyltti1);
+                System.out.println();
+                tulosta(kyltti2);
+                System.out.println();
+                tulosta(kyltti3);
+                System.exit(0);
+
+            default:
+                System.out.println("Kylttisi olivat:");
+                tulosta(kyltti1);
+                System.out.println();
+                tulosta(kyltti2);
+                System.out.println();
+                tulosta(kyltti3);
+                System.exit(0);
+
+        }
 
     }
 
