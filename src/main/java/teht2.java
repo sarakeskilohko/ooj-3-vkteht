@@ -103,8 +103,19 @@ public class teht2 {
         String teksti = scanner.nextLine();
         System.out.println("Valitse täyte (*, # tai -)");
         String täyte = scanner.nextLine();
+        switch (täyte){
+            case "*":
+            case "-":
+            case "#":
+                kyltti.asetaTäyte(täyte);
+                break;
+            default:
+                System.out.println("Syötä validi täyte (*, # tai -)");
+                String täyte1 = scanner.nextLine();
+                kyltti.asetaTäyte(täyte1);
+                break;
+        }
 
-        kyltti.asetaTäyte(täyte);
         kyltti.asetaKorkeus(korkeus);
         kyltti.asetaLeveys(leveys);
         kyltti.asetaTeksti(teksti);
